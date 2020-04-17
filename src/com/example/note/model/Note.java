@@ -4,15 +4,15 @@ import java.util.Objects;
 
 public class Note {
     private String note;
-    private String date;
     private boolean isChecked;
     private String label;
+    private String date;
 
     public Note() {
 
     }
 
-    public Note(String note, String date, boolean isChecked, String label) {
+    public Note(String note, boolean isChecked, String label, String date) {
         this.note = note;
         this.date = date;
         this.isChecked = isChecked;
@@ -55,9 +55,9 @@ public class Note {
     public String toString() {
         return "Note{" +
                 "note='" + note + '\'' +
-                ", date='" + date + '\'' +
                 ", isChecked=" + isChecked +
                 ", label='" + label + '\'' +
+                ", date='" + date + '\'' +
                 '}';
     }
 

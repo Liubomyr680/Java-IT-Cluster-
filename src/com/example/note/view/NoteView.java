@@ -26,7 +26,7 @@ public class NoteView {
         System.out.println("Enter Label:");
         String labelText = input.nextLine();
 
-        System.out.println("Input is Note complete 1 is complete:");
+        System.out.println("Enter 1 if Note is checked, or 0 if Note is not checked");
         String checkedText = input.nextLine();
 
         // check input if needed
@@ -54,7 +54,7 @@ public class NoteView {
                     System.out.println("Enter Label:");
                     String labelText = input.nextLine();
 
-                    System.out.println("Input is Note complete 1 is complete:");
+                    System.out.println("Enter 1 if Note is checked, or 0 if Note is not checked");
                     String checkedText = input.nextLine();
 
                     it.setNote(noteText);
@@ -78,7 +78,7 @@ public class NoteView {
             Scanner search = new Scanner(System.in);
             String searchToDelete = search.nextLine().trim();
 
-            notes.removeIf(note -> note.equals(searchToDelete));
+            notes.removeIf(note -> note.getLabel().equals(searchToDelete));
 
         }else{
             System.out.println("Note List is empty, please create new Note to edit it!\n");
