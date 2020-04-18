@@ -1,6 +1,8 @@
 package com.example.note.controller;
 
+
 import com.example.note.model.Note;
+import com.example.note.model.User;
 import com.example.note.repositories.NoteRepository;
 import com.example.note.view.NoteView;
 
@@ -10,12 +12,7 @@ public class NoteController {
 
     private List<Note> notes = NoteRepository.getInstance().getNotes();
     private NoteView noteView = new NoteView();
-    private String[] commandList = {"create","edit","delete","print"};
-
-    private void enterNote(){
-
-        notes.add(noteView.inputNote());
-    }
+    private String[] commandList = {"create","edit","delete","print","exit"};
 
     public boolean checkCommand(String command) {
         boolean isExistingCommand = false;
@@ -33,7 +30,7 @@ public class NoteController {
 
         switch (command){
             case "create":
-                enterNote();
+                notes.add(noteView.inputNote());
                 break;
             case "edit":
                 noteView.editNote(notes);
